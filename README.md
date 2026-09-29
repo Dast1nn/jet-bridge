@@ -76,7 +76,7 @@ src/
 Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Dast1nn/jet-bridge.git
 cd jet-bridge
 ```
 
