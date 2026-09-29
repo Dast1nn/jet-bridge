@@ -1,0 +1,85 @@
+@use '../../styles/variables' as *;
+
+.header {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	width: 88px;
+	height: 88px;
+	object-fit: contain;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.languages {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: -0.28px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.5);
+
+	button {
+		padding: 0;
+		cursor: pointer;
+
+		color: inherit;
+		background: none;
+	}
+}
+
+.activeLanguage {
+	color: $white !important;
+}
+
+.menuButton {
+	width: 197px;
+	height: 50px;
+
+	padding: 10px 17px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+
+	border-radius: 20px;
+
+	cursor: pointer;
+
+	color: $white;
+	background: $gradient;
+
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: -0.28px;
+	text-transform: uppercase;
+
+	transition:
+		transform 0.2s ease,
+		opacity 0.2s ease;
+
+	img {
+		width: 24px;
+		height: 24px;
+	}
+
+	&:hover {
+		transform: translateY(-2px);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+}

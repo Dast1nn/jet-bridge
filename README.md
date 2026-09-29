@@ -1,75 +1,165 @@
-# React + TypeScript + Vite
+# JET Bridge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive landing page for **JET Bridge**, implemented as a React test assignment based on a Figma design.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- TypeScript
+- Vite
+- SCSS Modules
+- Responsive CSS
+- Semantic HTML
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive landing page based on the provided Figma design
+- Reusable React components and section-based architecture
+- Desktop, tablet, and mobile layouts
+- Interactive navigation elements and buttons
+- Reviews carousel
+- Contact/application form
+- Responsive images and decorative assets
+- Hover and focus states
+- Smooth scrolling
+- Accessible form and button markup
 
-## Expanding the ESLint configuration
+## Page Sections
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The landing page includes:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Hero
+- About
+- Advantages
+- Tariffs
+- Delivery Steps
+- Delivery Types
+- Reviews
+- Application Form
+- Contacts
+- Footer
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+src/
+├── assets/
+│   ├── fonts/
+│   ├── icons/
+│   └── images/
+│
+├── components/
+│   ├── Header/
+│   └── Footer/
+│
+├── sections/
+│   ├── Hero/
+│   ├── About/
+│   ├── Advantages/
+│   ├── Tariffs/
+│   ├── Steps/
+│   ├── DeliveryTypes/
+│   ├── Reviews/
+│   ├── ContactForm/
+│   └── Contacts/
+│
+├── styles/
+│   ├── _variables.scss
+│   └── global.scss
+│
+├── App.tsx
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Clone the repository:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone <repository-url>
+cd jet-bridge
 ```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Design
+
+The interface was implemented from the provided **JET Bridge Figma design**.
+
+The goal was to reproduce the visual design as closely as possible while keeping the React code maintainable and reusable instead of relying on automatically generated Figma markup.
+
+## Responsive Design
+
+The desktop layout follows the original Figma design.
+
+Additional responsive behavior was implemented for:
+
+- Desktop
+- Tablet
+- Mobile
+
+Responsive changes include typography, card layouts, image positioning, forms, and navigation elements.
+
+## Styling
+
+The project uses **SCSS Modules** so styles remain scoped to individual components.
+
+Shared colors and layout values are stored in:
+
+```text
+src/styles/_variables.scss
+```
+
+Main project colors:
+
+```scss
+$blue: #03467c;
+$orange: #f97014;
+$yellow: #f9bc14;
+$white: #ffffff;
+$black: #000000;
+```
+
+## Form
+
+The application form currently demonstrates the frontend form flow.
+
+No backend or API integration is included unless connected separately.
+
+## Code Quality
+
+The project focuses on:
+
+- Clear component structure
+- Reusable UI patterns
+- TypeScript
+- Scoped styles
+- Responsive layouts
+- Semantic markup
+- Maintainable code organization
+
+## Author
+
+Frontend test assignment implementation.

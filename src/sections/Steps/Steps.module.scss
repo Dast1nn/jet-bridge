@@ -1,0 +1,321 @@
+@use '../../styles/variables' as *;
+
+.steps {
+	width: 100%;
+	padding: 0 0 80px;
+	background: $white;
+}
+
+.container {
+	position: relative;
+
+	width: min(1280px, calc(100% - 40px));
+	height: 582px;
+
+	margin: 0 auto;
+}
+
+.background {
+	position: absolute;
+
+	left: 352px;
+	top: 0;
+
+	width: 834px;
+	height: 582px;
+
+	object-fit: contain;
+	object-position: bottom;
+
+	z-index: 0;
+
+	pointer-events: none;
+}
+
+.intro {
+	position: absolute;
+
+	left: 0;
+	top: 3px;
+
+	width: 630px;
+	height: 280px;
+
+	z-index: 2;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
+
+	h2 {
+		margin: 0 0 20px;
+
+		font-family: 'Involve', sans-serif;
+		font-size: 60px;
+		font-weight: 700;
+		line-height: 1;
+		letter-spacing: -0.66px;
+
+		color: $blue;
+
+		text-transform: uppercase;
+	}
+
+	p {
+		width: 630px;
+
+		margin: 0;
+
+		font-family: 'Involve', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.2;
+		letter-spacing: -0.32px;
+
+		color: $black;
+	}
+}
+
+.contactButton {
+	width: 326px;
+	height: 60px;
+
+	padding: 10px;
+
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	gap: 50px;
+
+	border: 1px solid #f97014;
+	border-radius: 20px;
+
+	background: linear-gradient(90deg, #f97014 0%, #f9bc14 100%);
+
+	color: $white;
+
+	font-family: 'Involve', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.5;
+	letter-spacing: -0.28px;
+
+	text-transform: uppercase;
+
+	cursor: pointer;
+
+	transition: transform 0.2s ease;
+
+	&:hover {
+		transform: translateY(-2px);
+	}
+}
+
+.arrow {
+	width: 40px;
+	height: 40px;
+
+	flex-shrink: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-radius: 10px;
+
+	background: $white;
+
+	img {
+		width: 36px;
+		height: 36px;
+	}
+}
+
+.cards {
+	position: absolute;
+	inset: 0;
+
+	z-index: 3;
+}
+
+.card {
+	position: absolute;
+
+	width: 305px;
+	height: 280px;
+
+	padding: 25px 27px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	border-radius: 20px;
+
+	background: linear-gradient(180deg, #03467c 0%, #0580e2 100%);
+
+	color: $white;
+
+	h3 {
+		width: 168px;
+
+		margin: 0;
+
+		font-family: 'Involve', sans-serif;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 1.1;
+		letter-spacing: -0.4px;
+
+		text-transform: uppercase;
+	}
+
+	> p {
+		width: 254px;
+
+		margin: 0;
+
+		font-family: 'Involve', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.2;
+		letter-spacing: -0.32px;
+	}
+}
+
+.cardHeader {
+	width: 254px;
+
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.iconBox {
+	width: 48px;
+	height: 48px;
+
+	flex-shrink: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 8px;
+
+	border-radius: 10px;
+
+	background: $white;
+
+	img {
+		width: 30px;
+		height: 30px;
+
+		object-fit: contain;
+	}
+}
+
+.online {
+	left: 650px;
+	top: 3px;
+}
+
+.warehouse {
+	left: 0;
+	top: 303px;
+}
+
+.plane {
+	left: 325px;
+	top: 303px;
+}
+
+.delivery {
+	right: 0;
+	top: 303px;
+}
+@media (max-width: 1100px) {
+	.steps {
+		padding: 60px 0;
+	}
+
+	.container {
+		width: min(900px, calc(100% - 40px));
+		height: auto;
+
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	.background {
+		display: none;
+	}
+
+	.intro {
+		position: static;
+
+		width: 100%;
+		height: auto;
+
+		h2 {
+			font-size: 48px;
+		}
+
+		p {
+			width: 100%;
+			max-width: 630px;
+		}
+	}
+
+	.cards {
+		position: static;
+
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+
+	.card {
+		position: static;
+
+		width: 100%;
+
+		> p,
+		.cardHeader {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 650px) {
+	.steps {
+		padding: 40px 0;
+	}
+
+	.container {
+		width: calc(100% - 30px);
+	}
+
+	.intro {
+		h2 {
+			font-size: 34px;
+		}
+	}
+
+	.contactButton {
+		width: 100%;
+		max-width: 326px;
+	}
+
+	.cards {
+		grid-template-columns: 1fr;
+	}
+
+	.card {
+		min-height: 250px;
+		height: auto;
+	}
+}

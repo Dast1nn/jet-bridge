@@ -1,0 +1,298 @@
+@use '../../styles/variables' as *;
+
+.section {
+	width: 100%;
+	padding-bottom: 80px;
+
+	background: $white;
+}
+
+.container {
+	width: min(1280px, calc(100% - 40px));
+	margin: 0 auto;
+}
+
+.title {
+	margin: 0 0 20px;
+
+	font-family: 'Involve', sans-serif;
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: -0.66px;
+
+	color: $blue;
+
+	text-transform: uppercase;
+}
+
+.content {
+	position: relative;
+
+	width: 100%;
+	height: 709px;
+}
+
+.background {
+	position: absolute;
+
+	left: 0;
+	top: 0;
+
+	width: 100%;
+	height: 512px;
+
+	object-fit: cover;
+
+	border-radius: 30px;
+}
+
+.cards {
+	position: absolute;
+
+	left: 0;
+	top: 402px;
+
+	width: 100%;
+	height: 307px;
+}
+
+.card {
+	position: absolute;
+
+	width: 433px;
+	height: 293px;
+
+	border-radius: 20px;
+
+	overflow: hidden;
+
+	box-shadow: 0 4px 15px rgba(63, 95, 45, 0.25);
+
+	transition:
+		transform 0.25s ease,
+		box-shadow 0.25s ease;
+
+	&:hover {
+		z-index: 20;
+
+		box-shadow: 0 10px 35px rgba(63, 95, 45, 0.28);
+	}
+}
+
+.cardContent {
+	position: absolute;
+
+	left: 18px;
+	top: 30px;
+
+	width: 397px;
+	height: 234px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+
+	z-index: 2;
+}
+
+.label {
+	min-height: 40px;
+
+	padding: 10px 20px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border: 1px solid currentColor;
+	border-radius: 10px;
+
+	font-family: 'Involve', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.2;
+	letter-spacing: -0.32px;
+}
+
+.card {
+	h3 {
+		width: 290px;
+
+		margin: 0;
+
+		font-family: 'Involve', sans-serif;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 1.1;
+		letter-spacing: -0.4px;
+
+		text-transform: uppercase;
+	}
+}
+
+.texture {
+	position: absolute;
+	inset: 0;
+
+	width: 100%;
+	height: 100%;
+
+	object-fit: cover;
+
+	opacity: 0.2;
+
+	pointer-events: none;
+}
+
+.orange {
+	background: linear-gradient(90deg, #f97014 0%, #f9bc14 100%);
+
+	color: $white;
+}
+
+.blue {
+	background: #03467c;
+
+	color: $white;
+}
+
+.white {
+	background: $white;
+
+	color: $blue;
+}
+
+.cardOne {
+	left: 0;
+	top: 0;
+
+	transform: rotate(1.44deg);
+
+	&:hover {
+		transform: rotate(1.44deg) translateY(-8px);
+	}
+}
+
+.cardTwo {
+	left: 323px;
+	top: 4px;
+
+	transform: rotate(-0.39deg);
+
+	&:hover {
+		transform: rotate(-0.39deg) translateY(-8px);
+	}
+}
+
+.cardThree {
+	left: 630px;
+	top: 4px;
+
+	transform: rotate(1.44deg);
+
+	&:hover {
+		transform: rotate(1.44deg) translateY(-8px);
+	}
+}
+
+.cardFour {
+	left: 953px;
+	top: 8px;
+
+	transform: rotate(-0.39deg);
+
+	&:hover {
+		transform: rotate(-0.39deg) translateY(-8px);
+	}
+}
+@media (max-width: 1100px) {
+	.section {
+		padding: 60px 0;
+	}
+
+	.title {
+		font-size: 48px;
+	}
+
+	.content {
+		height: auto;
+	}
+
+	.background {
+		position: relative;
+
+		height: 420px;
+	}
+
+	.cards {
+		position: relative;
+
+		top: auto;
+
+		margin-top: -80px;
+
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+
+		height: auto;
+	}
+
+	.card {
+		position: relative;
+
+		left: auto;
+		top: auto;
+
+		width: 100%;
+
+		transform: none !important;
+
+		&:hover {
+			transform: translateY(-6px) !important;
+		}
+	}
+}
+
+@media (max-width: 650px) {
+	.section {
+		padding: 40px 0;
+	}
+
+	.container {
+		width: calc(100% - 30px);
+	}
+
+	.title {
+		font-size: 34px;
+	}
+
+	.background {
+		height: 300px;
+
+		border-radius: 20px;
+	}
+
+	.cards {
+		margin-top: -40px;
+
+		grid-template-columns: 1fr;
+	}
+
+	.card {
+		height: 250px;
+	}
+
+	.cardContent {
+		width: calc(100% - 36px);
+		height: calc(100% - 60px);
+	}
+
+	.card {
+		h3 {
+			width: 100%;
+		}
+	}
+}
